@@ -3,6 +3,11 @@
   src: url("../MarvelRegular-Dj83.ttf") format("truetype");
 }
 
+body {
+  background-image: url("../Images/marvel-vs-background.jpg");
+  height: 3000px;
+}
+
 * {
   margin: 0%;
   padding: 0%;
