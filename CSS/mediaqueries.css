@@ -1,5 +1,8 @@
 /* Mobile devices screen size */
 @media (max-width: 480px) {
+  body {
+    display: none;
+  }
 }
 
 /* Ipad/Tablet screen size */
@@ -8,12 +11,21 @@
 
 /* Small monitor/laptop screen size */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .nav-sublist {
+    width: 60%;
+  }
 }
 
 /* Mid-size monitor screen size */
-@media (min-width: 1025px) and (max-width: 1200px) {
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .nav-sublist {
+    width: 40%;
+  }
 }
 
 /* Ultrawide monitor screen size */
-@media (min-width: 1201px) {
+@media screen and (min-width: 1201px) {
+  .nav-sublist {
+    width: 80%;
+  }
 }

@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Marvel";
-  src: url("MarvelRegular-Dj83.ttf") format("truetype");
+  font-family: "Marvel-Regular";
+  src: url("../MarvelRegular-Dj83.ttf") format("truetype");
 }
 
 * {
@@ -21,7 +21,7 @@ nav {
 .nav-sublist {
   display: flex;
   justify-content: space-around;
-  width: 30%;
+  width: 40%;
 }
 
 .nav-sublist li {
@@ -32,26 +32,104 @@ nav {
   color: #ebe8e8;
   text-decoration: none;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .nav-sublist li a:hover {
-  border: #ebe8e8 solid 2px;
+  border: black solid 4px;
+  color: black;
   padding: 7px;
 }
 
+.hamburger-lines {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-lines > * {
+  background-color: #ebe8e8;
+  width: 30px;
+  height: 4px;
+  margin: 5px;
+  transition: all 0.2s ease;
+}
+
 .logo-text {
-  padding-top: 5px;
+  padding-top: 8px;
 }
 
 .logo-text a {
-  font-family: "Marvel";
+  font-family: "Marvel-Regular";
   color: #ebe8e8;
-  letter-spacing: 0ch;
-  font-size: 40px;
+  letter-spacing: 1px;
+  font-size: 50px;
   text-decoration: none;
 }
 
 .logo-text a:hover {
   color: black;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-sublist {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    overflow-x: hidden;
+  }
+
+  .nav-sublist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    width: 40vw;
+    height: 94vh;
+    top: 6vh;
+    background-color: #c53535;
+    transform: translateX(100%);
+    transition: transform 0.75s ease-in;
+  }
+
+  .nav-sublist li {
+    opacity: 0;
+  }
+
+  .nav-sublist-active {
+    transform: translateX(0%);
+  }
+
+  .hamburger-lines {
+    display: block;
+  }
+
+  .switch .top-line {
+    transform: rotate(-45deg) translate(-6.5px, 6px);
+    background-color: black;
+  }
+
+  .switch .middle-line {
+    opacity: 0;
+  }
+
+  .switch .bottom-line {
+    transform: rotate(45deg) translate(-6.5px, -6px);
+    background-color: black;
+  }
+
+  @keyframes nav-sublist-li-fade {
+    from {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
 }
