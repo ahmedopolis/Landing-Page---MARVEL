@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Marvel";
+  src: url("MarvelRegular-Dj83.ttf") format("truetype");
+}
+
 * {
   margin: 0%;
   padding: 0%;
@@ -7,7 +12,46 @@
 nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  min-height: 6vh;
+  background-color: #c53535;
+  font-family: "Abril Fatface", cursive;
 }
 
-.logo {
+.nav-sublist {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-sublist li {
+  list-style-type: none;
+}
+
+.nav-sublist li a {
+  color: #ebe8e8;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.nav-sublist li a:hover {
+  border: #ebe8e8 solid 2px;
+  padding: 7px;
+}
+
+.logo-text {
+  padding-top: 5px;
+}
+
+.logo-text a {
+  font-family: "Marvel";
+  color: #ebe8e8;
+  letter-spacing: 0ch;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+.logo-text a:hover {
+  color: black;
 }
