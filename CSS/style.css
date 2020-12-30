@@ -5,7 +5,7 @@
 
 body {
   background-image: url("../Images/marvel-vs-background.jpg");
-  height: 3000px;
+  height: auto;
 }
 
 * {
@@ -105,6 +105,45 @@ nav {
 
 .sticky-header .hamburger-lines > * {
   background-color: #c53535;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 60%;
+  height: auto;
+  background-color: rgba(233, 78, 78, 0.5);
+  text-align: left;
+  color: #ebe8e8;
+}
+
+.container h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 60px;
+  font-weight: 900;
+  padding-left: 20px;
+}
+
+.landing__container {
+  padding: 20px;
+}
+
+.landing__container h2 {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.landing__container p {
+  font-family: Open Sans;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: left;
+  margin: 2%;
 }
 
 @media screen and (max-width: 1024px) {

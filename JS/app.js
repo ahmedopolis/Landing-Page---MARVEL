@@ -20,13 +20,12 @@ const navigationSlide = () => {
   });
 };
 
-window.addEventListener("scroll", () => {
-  const headerBar = document.querySelector("header");
-  headerBar.classList.toggle("sticky-header", window.scrollY > 0);
-});
-
 const app = () => {
   navigationSlide();
+  window.addEventListener("scroll", () => {
+    const headerBar = document.querySelector("header");
+    headerBar.classList.toggle("sticky-header", window.scrollY > 0);
+  });
 };
 
 app();
