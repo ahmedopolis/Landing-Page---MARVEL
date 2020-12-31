@@ -1,3 +1,36 @@
+const sectionList = document.querySelectorAll("section");
+const navigationBar = document.querySelector(".nav-sublist");
+
+const removeActiveClassfromSections = () => {
+  sectionList.forEach((elem) => {
+    elem.classList.remove("your-active-class", "active");
+  });
+};
+
+removeActiveClassfromSections();
+
+const isInViewport = (elem) => {
+  const distance = elem.getBoundingClientRect();
+  return (
+    distance.top >= 0 &&
+    distance.left >= 0 &&
+    distance.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    distance.right <=
+      (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+window.addEventListener("scroll", () => {
+  for (const section of sectionList) {
+    if (isInViewport(section)) {
+      section.classList.add("your-active-class", "active");
+    } else {
+      section.classList.remove("your-active-class", "active");
+    }
+  }
+});
+
 const navigationSlide = () => {
   const burgerLines = document.querySelector(".hamburger-lines");
   const navigationBar = document.querySelector(".nav-sublist");
