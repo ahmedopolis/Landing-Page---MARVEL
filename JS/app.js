@@ -2,10 +2,9 @@ const navigationSlide = () => {
   const burgerLines = document.querySelector(".hamburger-lines");
   const navigationBar = document.querySelector(".nav-sublist");
   const navigationSublist = document.querySelectorAll(".nav-sublist li");
-
-  burgerLines.addEventListener("click", () => {
+  burgerLines.addEventListener("click", (event) => {
+    event.preventDefault();
     navigationBar.classList.toggle("nav-sublist-active");
-
     navigationSublist.forEach((link, index) => {
       if (link.style.animation) {
         link.style.animation = "";
@@ -15,7 +14,6 @@ const navigationSlide = () => {
         }s`;
       }
     });
-
     burgerLines.classList.toggle("switch");
   });
 };
@@ -28,4 +26,4 @@ const app = () => {
   });
 };
 
-app();
+window.addEventListener("load", app());
