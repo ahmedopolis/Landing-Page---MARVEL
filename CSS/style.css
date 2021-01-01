@@ -301,10 +301,6 @@ section.active {
     background-color: #ebe8e8;
   }
 
-  .nav-sublist li {
-    opacity: 0;
-  }
-
   .nav-sublist-active {
     transform: translateX(0%);
   }

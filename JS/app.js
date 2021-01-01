@@ -1,7 +1,7 @@
 const burgerLines = document.querySelector(".hamburger-lines");
 const sectionList = document.querySelectorAll("section");
 const navigationBar = document.querySelector(".nav-sublist");
-const navigationSublist = document.querySelectorAll(".nav-sublist li");
+
 
 const removeActiveClassfromSections = () => {
   sectionList.forEach((elem) => {
@@ -19,6 +19,16 @@ const isInViewport = (elem) => {
     distance.right <=
       (window.innerWidth || document.documentElement.clientWidth)
   );
+};
+
+const toggleActiveClasses = () => {
+  for (const section of sectionList) {
+    if (isInViewport(section)) {
+      section.classList.add("your-active-class", "active");
+    } else {
+      section.classList.remove("your-active-class", "active");
+    }
+  }
 };
 
 const removeInnerHTMLofUnorderedListofNavBar = () => {
@@ -42,9 +52,7 @@ const navigationSlide = () => {
   });
 };
 
-const app = () => {
-  removeActiveClassfromSections();
-  removeInnerHTMLofUnorderedListofNavBar();
+const actionsAtLoad = () => {
   window.addEventListener("load", () => {
     sectionList.forEach((elem) => {
       const sectionID = elem.id;
@@ -52,19 +60,24 @@ const app = () => {
       navToken.innerHTML = `<a href="#${sectionID}">${sectionID}</a>`;
       navigationBar.appendChild(navToken);
     });
+    toggleActiveClasses();
   });
-  navigationSlide();
+}
+
+const actionsAtScroll = () => {
   window.addEventListener("scroll", () => {
     const headerBar = document.querySelector("header");
     headerBar.classList.toggle("sticky-header", window.scrollY > 0);
-    for (const section of sectionList) {
-      if (isInViewport(section)) {
-        section.classList.add("your-active-class", "active");
-      } else {
-        section.classList.remove("your-active-class", "active");
-      }
-    }
+    toggleActiveClasses();
   });
+}
+
+const app = () => {
+  removeActiveClassfromSections();
+  removeInnerHTMLofUnorderedListofNavBar();
+  actionsAtLoad();
+  navigationSlide();
+  actionsAtScroll();
 };
 
 window.addEventListener("load", app());
