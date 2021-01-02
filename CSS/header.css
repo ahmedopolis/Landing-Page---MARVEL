@@ -1,0 +1,86 @@
+    nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 6vh;
+    background-color: #c53535;
+    font-family: "Abril Fatface", cursive;
+  }
+  
+  .nav-sublist {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .nav-sublist li {
+    list-style-type: none;
+  }
+  
+  .nav-sublist li a {
+    color: #ebe8e8;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-sublist li a:hover {
+    border: black solid 4px;
+    color: black;
+    padding: 7px;
+  }
+  
+  .hamburger-lines {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .hamburger-lines > * {
+    background-color: #ebe8e8;
+    width: 30px;
+    height: 4px;
+    margin: 5px;
+    transition: all 0.2s ease;
+  }
+  
+  .logo-text {
+    padding-top: 8px;
+  }
+  
+  .logo-text a {
+    font-family: "Marvel-Regular";
+    color: #ebe8e8;
+    letter-spacing: 1px;
+    font-size: 50px;
+    text-decoration: none;
+  }
+  
+  .sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky-header nav {
+    background-color: #ebe8e8;
+  }
+  
+  .sticky-header .logo-text a {
+    color: #c53535;
+  }
+  
+  .sticky-header .logo-text a:hover {
+    color: black;
+  }
+  
+  .sticky-header .nav-sublist li a {
+    color: #c53535;
+  }
+  
+  .sticky-header .nav-sublist li a:hover {
+    border: black solid 4px;
+    color: black;
+    padding: 7px;
+  }
+  
+  .sticky-header .hamburger-lines > * {
+    background-color: #c53535;
+  }

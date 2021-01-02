@@ -1,0 +1,30 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 6vh;
+    background-color: #c53535;
+}
+
+footer >* {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-media img {
+    height: 35px;
+    width: 35px;
+    margin: 2px;
+}
+
+#footer-text {
+    color: #ebe8e8;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
