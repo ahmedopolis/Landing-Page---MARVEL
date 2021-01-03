@@ -15,7 +15,6 @@
 /**
  * The three necessary global variables are defined.
  */
-
 const burgerLines = document.querySelector(".hamburger-lines");
 const sectionList = document.querySelectorAll("section");
 const navigationBar = document.querySelector(".nav-sublist");
@@ -23,7 +22,6 @@ const navigationBar = document.querySelector(".nav-sublist");
 /**
  * This functions removes all active classes associated to a given section.
  */
-
 const removeActiveClassfromSections = () => {
   sectionList.forEach((elem) => {
     elem.classList.remove("your-active-class", "active");
@@ -33,7 +31,6 @@ const removeActiveClassfromSections = () => {
 /**
  * This function returns a boolean based on weither an element is within the screen view or not.
  */
-
 const isInViewport = (elem) => {
   const distance = elem.getBoundingClientRect();
   return (
@@ -49,7 +46,6 @@ const isInViewport = (elem) => {
 /**
  * This function dynamically toggles the action classes for sections based on weither they are within the viewport or not.
  */
-
 const toggleActiveClasses = () => {
   for (const section of sectionList) {
     if (isInViewport(section)) {
@@ -63,7 +59,6 @@ const toggleActiveClasses = () => {
 /**
  * This functions removes all content from the navigation bar.
  */
-
 const removeInnerHTMLofUnorderedListofNavBar = () => {
   navigationBar.innerHTML = "";
 };
@@ -71,7 +66,6 @@ const removeInnerHTMLofUnorderedListofNavBar = () => {
 /**
  * This function enables the toggling of the side-bar menu by clickling the hamburger lines.
  */
-
 const navigationSlide = () => {
   burgerLines.addEventListener("click", (event) => {
     event.preventDefault();
@@ -84,7 +78,6 @@ const navigationSlide = () => {
  * This function adds the section aanchors in the navigation bar based on the name of their respective IDs.
  * The 'toggleActiveClasses' function is add because it needs to be called at 'load'.
  */
-
 const actionsAtLoad = () => {
   window.addEventListener("load", () => {
     sectionList.forEach((elem) => {
@@ -101,7 +94,6 @@ const actionsAtLoad = () => {
  * This function enables the header to be stuck in the viewport at all times.
  * The 'toggleActiveClasses' function is add because it needs to be called upon each 'scroll' instance.
  */
-
 const actionsAtScroll = () => {
   window.addEventListener("scroll", () => {
     const headerBar = document.querySelector("header");
@@ -113,7 +105,6 @@ const actionsAtScroll = () => {
 /**
  * The herein function calls all the necessary functions for the js script. 
  */
-
 const app = () => {
   removeActiveClassfromSections();
   removeInnerHTMLofUnorderedListofNavBar();

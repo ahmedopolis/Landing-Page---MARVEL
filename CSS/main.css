@@ -1,8 +1,12 @@
+/* The 'main' element uses display 'flex' to keep the child container
+centered in the page and elimanate the gap between the container and the
+header. */
 main {
     display: flex;
     justify-content: center;
 }
 
+/* This section of CSS rules are necessary for the 'Section' elements.*/
 .container {
     background-color: rgba(226, 172, 172, 0.5);
     width: 50%;

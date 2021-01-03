@@ -1,14 +1,18 @@
+/* Import the css files. */
 @import url("header.css");
 @import url("main.css");
 @import url("footer.css");
 @import url("screen-sizing.css");
 @import url("side-bar.css");
 
+/* The font for the page logo. */
 @font-face {
   font-family: "Marvel-Regular";
   src: url("../MarvelRegular-Dj83.ttf") format("truetype");
 }
 
+/* An image is added as a body-background and all 
+margin/padding are set to null for all elements. */
 body {
   background-image: url("../Images/marvel-vs-background.jpg");
   height: auto;

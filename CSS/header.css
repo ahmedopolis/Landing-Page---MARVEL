@@ -1,86 +1,87 @@
-    nav {
+/* The navigation bar styling is found below. */
+nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 6vh;
     background-color: #c53535;
     font-family: "Abril Fatface", cursive;
-  }
+}
   
-  .nav-sublist {
+.nav-sublist {
     display: flex;
     justify-content: space-around;
-  }
+}
   
-  .nav-sublist li {
+.nav-sublist li {
     list-style-type: none;
-  }
+}
   
-  .nav-sublist li a {
+.nav-sublist li a {
     color: #ebe8e8;
     text-decoration: none;
     font-weight: bold;
-  }
+}
   
-  .nav-sublist li a:hover {
+.nav-sublist li a:hover {
     border: black solid 4px;
     color: black;
     padding: 7px;
-  }
+}
   
-  .hamburger-lines {
+.hamburger-lines {
     display: none;
     cursor: pointer;
-  }
+}
   
-  .hamburger-lines > * {
+.hamburger-lines > * {
     background-color: #ebe8e8;
     width: 30px;
     height: 4px;
     margin: 5px;
     transition: all 0.2s ease;
-  }
+}
   
-  .logo-text {
+.logo-text {
     padding-top: 8px;
-  }
+}
   
-  .logo-text a {
+.logo-text a {
     font-family: "Marvel-Regular";
     color: #ebe8e8;
     letter-spacing: 1px;
     font-size: 50px;
     text-decoration: none;
-  }
+}
   
-  .sticky-header {
+.sticky-header {
     position: fixed;
     top: 0;
     width: 100%;
-  }
+}
   
-  .sticky-header nav {
+.sticky-header nav {
     background-color: #ebe8e8;
-  }
+}
   
-  .sticky-header .logo-text a {
+.sticky-header .logo-text a {
     color: #c53535;
-  }
+}
   
-  .sticky-header .logo-text a:hover {
+.sticky-header .logo-text a:hover {
     color: black;
-  }
+}
   
-  .sticky-header .nav-sublist li a {
+.sticky-header .nav-sublist li a {
     color: #c53535;
-  }
+}
   
-  .sticky-header .nav-sublist li a:hover {
+.sticky-header .nav-sublist li a:hover {
     border: black solid 4px;
     color: black;
     padding: 7px;
-  }
+}
   
-  .sticky-header .hamburger-lines > * {
+.sticky-header .hamburger-lines > * {
     background-color: #c53535;
-  }
+}
