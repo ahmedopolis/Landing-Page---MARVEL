@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <title>Marvel landing Page</title>
+    <!-- Meta Tags for HTML page -->
     <meta name="description" content="Landing Page (Marvel)" />
     <meta name="keywords" content="Landing page, Dynamic Menu" />
     <meta name="author" content="Ahmed Ibrahim" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/style.css" />
+    <!-- Load Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Load CSS Rules for Styling -->
     <link
       href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
       rel="stylesheet"
@@ -16,11 +19,15 @@
   </head>
   <body>
     <header>
+      <!-- Header element contains solely the navigation bar -->
       <nav>
+        <!-- Element containg text logo -->
         <div class="logo-text">
           <a href="#"><h4>MARVEL</h4></a>
         </div>
+        <!-- Unordered list that will foster dynamically added anchors based on section IDs -->
         <ul class="nav-sublist"></ul>
+        <!-- 'hamburger' menu button to toggle side-bar for the smaller screen sizes -->
         <div class="hamburger-lines">
           <div class="top-line"></div>
           <div class="middle-line"></div>
@@ -29,7 +36,10 @@
       </nav>
     </header>
     <main>
+      <!-- The 'main' element contains the HTML assets for the sections -->
       <div class="container">
+        <!-- Each section element have a 'landing container' class mainly for styling, an ID that will be used by the js script
+        to populate the li node. Adding more sections will only populate the navigation bar in the scenario it has an ID.-->
         <section id="HOME" data-nav="Section 1">
           <div class="landing__container">
             <h2>HOME</h2>
@@ -242,6 +252,7 @@
         </section>
       </div>
     </main>
+    <!-- The 'footer' element contaning the the pages logo, disclaimer and links to social media -->
     <footer>
       <div class="logo-text">
         <a href="#">
@@ -249,7 +260,7 @@
         </a>
       </div>
       <div id="footer-text">
-        2020 &#169; Overhaul Publishing. All Right reserved.
+        2021 &#169; Overhaul Publishing. All Right reserved.
       </div>
       <div class="social-media">
         <a href="https://www.facebook.com/Marvel/">
@@ -269,6 +280,7 @@
         </a>
       </div>
     </footer>
+    <!-- The 'script' element binds the js script to the herein HTML page -->
     <script src="JS/app.js"></script>
   </body>
 </html>
