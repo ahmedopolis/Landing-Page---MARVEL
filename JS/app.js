@@ -123,7 +123,7 @@ const navigationSlide = () => {
 
 /**
  * This function adds the section aanchors in the navigation bar based on the name of their respective IDs.
- * The 'toggleActiveClasses' function is add because it needs to be called at 'load'.
+ * The 'toggleActiveClasses' and 'scrollToSectionWithNavLink' functions are added because it needs to be called at 'load'.
  */
 const actionsAtLoad = () => {
   window.addEventListener("load", () => {
