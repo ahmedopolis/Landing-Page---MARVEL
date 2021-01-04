@@ -44,7 +44,10 @@ const isInViewport = (elem) => {
 };
 
 /**
- * This function dynamically toggles the action classes for sections based on weither they are within the viewport or not.
+ * This function dynamically toggles the action classes for sections based on weither 
+ * they are within the viewport or not. By using the 'matchSectionWithNavLink' function,
+ * the matching navigation link also has different styling when its corresponding section
+ * is visable within the viewport.
  */
 const toggleActiveClasses = () => {
   const navigationBarLinks = navigationBar.querySelectorAll(".nav-link-font");
@@ -59,7 +62,12 @@ const toggleActiveClasses = () => {
     }
   }
 };
-
+/**
+ * @param {*} section 
+ * @param {*} navLinks 
+ * The following fonction returns the navigation link that has a matching title to
+ * the id of a particular section.
+ */
 const matchSectionWithNavLink = (section, navLinks) => {
   const sectionID = section.id;
   for (const navLink of navLinks) {
