@@ -62,6 +62,7 @@ const toggleActiveClasses = () => {
     }
   }
 };
+
 /**
  * @param {*} section 
  * @param {*} navLinks 
@@ -77,6 +78,28 @@ const matchSectionWithNavLink = (section, navLinks) => {
     else {
       continue;
     }
+  }
+}
+
+/**
+ * The herein function adds an eventlistener to every navigation link. Upon click,
+ * the matching section is fetched and the pages scrolls smoothly to it. Also, the 
+ * section is aligned at the center of the page. 
+ */
+const scrollToSectionWithNavLink = () => {
+  const navigationBarLinks = navigationBar.querySelectorAll(".nav-link-font");
+  for (const navigationBarLink of navigationBarLinks) {
+    navigationBarLink.addEventListener("click", function(){
+      for (const section of sectionList){
+        let sectionID = section.id;
+        if (sectionID === navigationBarLink.innerHTML){
+          section.scrollIntoView({behavior: "smooth", block: "center"});
+        }
+        else {
+          continue;
+        }
+      }
+    })
   }
 }
 
@@ -111,9 +134,9 @@ const actionsAtLoad = () => {
       navigationBar.appendChild(navToken);
     });
     toggleActiveClasses();
+    scrollToSectionWithNavLink();
   });
 }
-
 
 /**
  * This function enables the header to be stuck in the viewport at all times.
