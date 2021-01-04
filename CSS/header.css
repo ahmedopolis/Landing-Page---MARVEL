@@ -28,6 +28,10 @@ nav {
     color: black;
     padding: 7px;
 }
+
+.nav-link-font {
+    font-family: "Panther-Regular";
+}
   
 .hamburger-lines {
     display: none;

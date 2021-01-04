@@ -11,6 +11,11 @@
   src: url("../MarvelRegular-Dj83.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Panther-Regular";
+  src: url("../PantheraRegular-MVZ9J.ttf") format("truetype");
+}
+
 /* An image is added as a body-background and all 
 margin/padding are set to null for all elements. */
 body {

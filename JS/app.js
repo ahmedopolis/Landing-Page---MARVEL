@@ -47,6 +47,8 @@ const isInViewport = (elem) => {
  * This function dynamically toggles the action classes for sections based on weither they are within the viewport or not.
  */
 const toggleActiveClasses = () => {
+  let navigationBarAnchor = document.getElementsByTagName("a");
+  console.log(navigationBarAnchor);
   for (const section of sectionList) {
     if (isInViewport(section)) {
       section.classList.add("your-active-class", "active");
@@ -83,7 +85,7 @@ const actionsAtLoad = () => {
     sectionList.forEach((elem) => {
       const sectionID = elem.id;
       const navToken = document.createElement("li");
-      navToken.innerHTML = `<a href="#${sectionID}">${sectionID}</a>`;
+      navToken.innerHTML = `<a class="nav-link-font">${sectionID}</a>`;
       navigationBar.appendChild(navToken);
     });
     toggleActiveClasses();
