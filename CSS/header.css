@@ -27,10 +27,17 @@ nav {
     border: black solid 4px;
     color: black;
     padding: 7px;
+    cursor: pointer;
 }
 
 .nav-link-font {
     font-family: "Panther-Regular";
+}
+
+.nav-link-active {
+    border: lightseagreen solid 4px;
+    background: linear-gradient(black,blue);
+    padding: 7px;
 }
   
 .hamburger-lines {

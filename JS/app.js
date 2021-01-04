@@ -47,16 +47,30 @@ const isInViewport = (elem) => {
  * This function dynamically toggles the action classes for sections based on weither they are within the viewport or not.
  */
 const toggleActiveClasses = () => {
-  let navigationBarAnchor = document.getElementsByTagName("a");
-  console.log(navigationBarAnchor);
+  const navigationBarLinks = navigationBar.querySelectorAll(".nav-link-font");
   for (const section of sectionList) {
+    let navLink = matchSectionWithNavLink(section, navigationBarLinks);
     if (isInViewport(section)) {
+      navLink.classList.add("nav-link-active");
       section.classList.add("your-active-class", "active");
     } else {
+      navLink.classList.remove("nav-link-active");
       section.classList.remove("your-active-class", "active");
     }
   }
 };
+
+const matchSectionWithNavLink = (section, navLinks) => {
+  const sectionID = section.id;
+  for (const navLink of navLinks) {
+    if (sectionID === navLink.innerHTML){
+      return navLink;
+    }
+    else {
+      continue;
+    }
+  }
+}
 
 /**
  * This functions removes all content from the navigation bar.
@@ -92,6 +106,7 @@ const actionsAtLoad = () => {
   });
 }
 
+
 /**
  * This function enables the header to be stuck in the viewport at all times.
  * The 'toggleActiveClasses' function is add because it needs to be called upon each 'scroll' instance.
@@ -111,8 +126,8 @@ const app = () => {
   removeActiveClassfromSections();
   removeInnerHTMLofUnorderedListofNavBar();
   actionsAtLoad();
-  navigationSlide();
   actionsAtScroll();
+  navigationSlide();
 };
 
 window.addEventListener("load", app());
