@@ -30,14 +30,17 @@ const removeActiveClassfromSections = () => {
 
 /**
  * This function returns a boolean based on weither an element is within the screen view or not.
+ * By using the herein local variable 'height', when at least half of the section is within view, 
+ * the actions classes will remain on that section and its respective navigation link.
  */
 const isInViewport = (elem) => {
   const distance = elem.getBoundingClientRect();
+  let elemHeight = -0.5*distance.height;
   return (
-    distance.top >= 0 &&
+    distance.top >= elemHeight &&
     distance.left >= 0 &&
     distance.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
+      (1.3 * window.innerHeight || document.documentElement.clientHeight) &&
     distance.right <=
       (window.innerWidth || document.documentElement.clientWidth)
   );
@@ -79,7 +82,7 @@ const matchSectionWithNavLink = (section, navLinks) => {
       continue;
     }
   }
-}
+};
 
 /**
  * The herein function adds an eventlistener to every navigation link. Upon click,
