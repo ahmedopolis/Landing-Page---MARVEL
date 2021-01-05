@@ -1,16 +1,16 @@
 /**
- * 
- * The herein js script builds a navigation bar dynamically based on the number of sections and its respective ids. 
+ *
+ * The herein js script builds a navigation bar dynamically based on the number of sections and its respective ids.
  * In the navigation menu, all options are anchored to a given section in the main body. All sections within the viewport
  * have active classes associated to them. When the screen size is 768 px and below, the menu switchs to a side-bar format.
- * 
+ *
  * Dependencies: None
- * 
+ *
  * JS Version: ES2015/ES6
- * 
+ *
  * JS Standard: ESlint
- * 
-*/
+ *
+ */
 
 /**
  * The three necessary global variables are defined.
@@ -30,12 +30,12 @@ const removeActiveClassfromSections = () => {
 
 /**
  * This function returns a boolean based on weither an element is within the screen view or not.
- * By using the herein local variable 'height', when at least half of the section is within view, 
+ * By using the herein local variable 'height', when at least half of the section is within view,
  * the actions classes will remain on that section and its respective navigation link.
  */
 const isInViewport = (elem) => {
   const distance = elem.getBoundingClientRect();
-  let elemHeight = -0.5*distance.height;
+  let elemHeight = -0.5 * distance.height;
   return (
     distance.top >= elemHeight &&
     distance.left >= 0 &&
@@ -47,7 +47,7 @@ const isInViewport = (elem) => {
 };
 
 /**
- * This function dynamically toggles the action classes for sections based on weither 
+ * This function dynamically toggles the action classes for sections based on weither
  * they are within the viewport or not. By using the 'matchSectionWithNavLink' function,
  * the matching navigation link also has different styling when its corresponding section
  * is visable within the viewport.
@@ -67,18 +67,17 @@ const toggleActiveClasses = () => {
 };
 
 /**
- * @param {*} section 
- * @param {*} navLinks 
+ * @param {*} section
+ * @param {*} navLinks
  * The following fonction returns the navigation link that has a matching title to
  * the id of a particular section.
  */
 const matchSectionWithNavLink = (section, navLinks) => {
   const sectionID = section.id;
   for (const navLink of navLinks) {
-    if (sectionID === navLink.innerHTML){
+    if (sectionID === navLink.innerHTML) {
       return navLink;
-    }
-    else {
+    } else {
       continue;
     }
   }
@@ -86,25 +85,24 @@ const matchSectionWithNavLink = (section, navLinks) => {
 
 /**
  * The herein function adds an eventlistener to every navigation link. Upon click,
- * the matching section is fetched and the pages scrolls smoothly to it. Also, the 
- * section is aligned at the center of the page. 
+ * the matching section is fetched and the pages scrolls smoothly to it. Also, the
+ * section is aligned at the center of the page.
  */
 const scrollToSectionWithNavLink = () => {
   const navigationBarLinks = navigationBar.querySelectorAll(".nav-link-font");
   for (const navigationBarLink of navigationBarLinks) {
-    navigationBarLink.addEventListener("click", function(){
-      for (const section of sectionList){
+    navigationBarLink.addEventListener("click", function () {
+      for (const section of sectionList) {
         let sectionID = section.id;
-        if (sectionID === navigationBarLink.innerHTML){
-          section.scrollIntoView({behavior: "smooth", block: "center"});
-        }
-        else {
+        if (sectionID === navigationBarLink.innerHTML) {
+          section.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
           continue;
         }
       }
-    })
+    });
   }
-}
+};
 
 /**
  * This functions removes all content from the navigation bar.
@@ -139,7 +137,7 @@ const actionsAtLoad = () => {
     toggleActiveClasses();
     scrollToSectionWithNavLink();
   });
-}
+};
 
 /**
  * This function enables the header to be stuck in the viewport at all times.
@@ -151,10 +149,10 @@ const actionsAtScroll = () => {
     headerBar.classList.toggle("sticky-header", window.scrollY > 0);
     toggleActiveClasses();
   });
-}
+};
 
 /**
- * The herein function calls all the necessary functions for the js script. 
+ * The herein function calls all the necessary functions for the js script.
  */
 const app = () => {
   removeActiveClassfromSections();
