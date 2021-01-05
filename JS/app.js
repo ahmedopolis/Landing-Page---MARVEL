@@ -2,7 +2,7 @@
  *
  * The herein js script builds a navigation bar dynamically based on the number of sections and its respective ids.
  * In the navigation menu, all options are anchored to a given section in the main body. All sections within the viewport
- * have active classes associated to them. When the screen size is 768 px and below, the menu switchs to a side-bar format.
+ * have active classes associated to them. When the screen size is 768 px and below, the menu switchs to a collapsing navigation bar format.
  *
  * Dependencies: None
  *
@@ -130,7 +130,7 @@ const removeInnerHTMLofUnorderedListofNavBar = () => {
 };
 
 /**
- * This function enables the toggling of the side-bar menu by clickling the hamburger lines.
+ * This function enables the toggling of the collapsing navgiation bar menu by clickling the hamburger lines.
  */
 const navigationSlide = () => {
   burgerLines.addEventListener("click", (event) => {

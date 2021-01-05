@@ -2,7 +2,7 @@
 Within that screen size, the 'hamburger' lines are visible. When
 the 'hamburger' lines are clicked; it turns into a black X. Upon
 the click, the sidebar is visible. When the user scrolls down,
-the side bar also has a white background. */
+the collapsing navigation bar also has a white background. */
 @media screen and (max-width: 768px) {
   .body {
     overflow-x: hidden;
