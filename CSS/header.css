@@ -40,6 +40,12 @@ nav {
   padding: 7px;
 }
 
+.nav-click {
+  border: lightsalmon solid 4px;
+  background: linear-gradient(yellow, green);
+  padding: 7px;
+}
+
 .hamburger-lines {
   display: none;
   cursor: pointer;

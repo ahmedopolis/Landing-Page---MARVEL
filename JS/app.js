@@ -105,6 +105,24 @@ const scrollToSectionWithNavLink = () => {
 };
 
 /**
+ * The herein function fetchs all the nav links and once a link is clicked a 'nav-click'
+ * CSS rules are applied to it. If another link is clicked, all the other links lose that
+ * particular CSS class. Also, the class is applied to the newly clicked link.
+ */
+const toggleActiveOnClickNavLink = () => {
+  const navigationBarLinks = navigationBar.querySelectorAll(".nav-link-font");
+  console.log(navigationBarLinks);
+  for (const navigationBarLink of navigationBarLinks) {
+    navigationBarLink.addEventListener("click", function () {
+      navigationBarLinks.forEach(function (elem) {
+        elem.classList.remove("nav-click");
+      });
+      navigationBarLink.classList.add("nav-click");
+    });
+  }
+};
+
+/**
  * This functions removes all content from the navigation bar.
  */
 const removeInnerHTMLofUnorderedListofNavBar = () => {
@@ -124,7 +142,8 @@ const navigationSlide = () => {
 
 /**
  * This function adds the section aanchors in the navigation bar based on the name of their respective IDs.
- * The 'toggleActiveClasses' and 'scrollToSectionWithNavLink' functions are added because it needs to be called at 'load'.
+ * The 'toggleActiveClasses', 'scrollToSectionWithNavLink', 'toggleActiveOnClickNavLink' functions are \
+ * added because it needs to be called at 'load'.
  */
 const actionsAtLoad = () => {
   window.addEventListener("load", () => {
@@ -136,6 +155,7 @@ const actionsAtLoad = () => {
     });
     toggleActiveClasses();
     scrollToSectionWithNavLink();
+    toggleActiveOnClickNavLink();
   });
 };
 
