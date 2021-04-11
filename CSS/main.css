@@ -1,5 +1,5 @@
 /* The 'main' element uses display 'flex' to keep the child container
-centered in the page and elimanate the gap between the container and the
+centered in the page and eliminate the gap between the container and the
 header. */
 main {
   display: flex;
